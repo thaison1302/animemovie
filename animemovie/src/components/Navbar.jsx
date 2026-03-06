@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/navbar.css'
 
 export default function Navbar({ onSearch }) {
+  const [open, setOpen] = useState(false)
+
   return (
     <header className="nav">
       <div className="nav-left">
+        <Link className="linknone" to="/home" onClick={() => setOpen(false)}>
         <div className="brand">Animemovie</div>
+        </Link>
       </div>
 
-      <nav className="nav-center">
-        <a className="nav-link" href="#">Home</a>
-        <a className="nav-link" href="#">List</a>
+      <button className="nav-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <span className={`hamburger ${open ? 'is-open' : ''}`}></span>
+      </button>
+
+      <nav className={`nav-center ${open ? 'open' : ''}`}>
+        <Link className="nav-link" to="/login" onClick={() => setOpen(false)}>Login</Link>
+        <Link className="nav-link" to="/login" onClick={() => setOpen(false)}>Logout</Link>
       </nav>
 
       <div className="nav-right">

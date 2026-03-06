@@ -1,0 +1,82 @@
+.lowerscreen-container {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 20px;
+  color: #fff;
+}
+
+.episode-header {
+  margin-bottom: 20px;
+}
+
+.episode-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px;
+  max-width: 1200px;
+}
+
+.episode-btn {
+  padding: 12px 8px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #333;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.episode-btn:hover {
+  background-color: #444;
+  border-color: #666;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.episode-btn.active {
+  background-color: #FF4444;
+  border-color: #FF2222;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+}
+
+.episode-btn.active:hover {
+  background-color: #FF2222;
+  transform: translateY(-2px) scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 8px;
+  }
+
+  .episode-btn {
+    padding: 10px 6px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 6px;
+  }
+
+  .episode-btn {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+  }
+}

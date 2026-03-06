@@ -6,7 +6,7 @@ export default function ReleaseSection({ title = 'New Release', items = [], onSe
   return (
     <section className="release-section">
       <h2 className="release-title">{title}</h2>
-      <Carousel items={items} />
+      <Carousel items={items} onSelect={onSelect} />
     </section>
   )
 }

@@ -3,8 +3,8 @@
   border-radius: 10px;
   overflow: hidden;
   margin: 18px 0 36px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  width: 83%;
   max-width: none;
   margin-left: 8%;
 }
@@ -14,7 +14,7 @@
   height: 420px;
   object-fit: cover;
   display: block;
-  filter: brightness(0.85);
+  filter: brightness(0.75);
 }
 
 /* overlay ở góc trái dưới giống ảnh */
@@ -31,8 +31,6 @@
   font-size: 2rem;
   margin: 0 0 12px 0;
   padding: 6px 12px;
-  border: 3px solid #ff55ff66; /* gợi ý khung hồng như ảnh */
-  background: rgba(0,0,0,0.35);
   border-radius: 6px;
 }
 
@@ -40,5 +38,5 @@
   margin: 0;
   color: rgba(255,255,255,0.85);
   line-height: 1.4;
-  font-size: 12px;
+  font-size: 20px;
 }

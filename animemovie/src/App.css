@@ -2,11 +2,9 @@
   max-width: none;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
   background: #11161a;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,33 +1,39 @@
 import React from 'react'
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import './styles/navbar.css'
 import './styles/hero.css'
 import './styles/release.css'
-import { data } from './data/data.js'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/hero.jsx'
 import ReleaseSection from './components/Release.jsx'
+import './App.css'
+import HomePage from './pages/HomePage.jsx'
+import LoginCard from './pages/Login.jsx'
+import SignUp from './pages/SignUp.jsx'
+import ViewFilm from './pages/ViewFilm.jsx'
+import { data } from './data/data.js'
+import InMovie from './pages/InMovie.jsx'
 
 function App() {
-  const heroItem = data[0] 
 
+  const [searchTerm, setSearchTerm] = React.useState('')
+  console.log(searchTerm)
   return (
     <div className="app-root">
-      <Navbar />
-      <main className="container">
-        <section className="explore">
-          <h2 className="section-subtitle">Explore</h2>
-          <p className="section-lead">What are you gonna watch today ?</p>
-          <Hero
-            image={heroItem.image}
-            title={heroItem.movieName}
-            description={heroItem.description}
-          />
-        </section>
+      <Navbar onSearch={(searchTerm) => setSearchTerm(searchTerm)} />
 
-        <ReleaseSection title="New Release" items={data.slice(1)} />
-      </main>
+      <Routes>
+          <Route path="*" element={<HomePage searchTerm={searchTerm} />} />
+          <Route path="/home" element={<HomePage searchTerm={searchTerm} />} />
+          <Route path="/login" element={<LoginCard />} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/viewfilm/:id" element={<ViewFilm />} />
+          <Route path="/inmovie/:id" element={<InMovie />} />
+
+      </Routes>
     </div>
+
   )
 }
 
