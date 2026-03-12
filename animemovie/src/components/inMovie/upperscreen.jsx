@@ -7,6 +7,7 @@ import FollowTheSignsIcon from '@mui/icons-material/FollowTheSigns';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import CameraIcon from '@mui/icons-material/Camera';
+import { useLocation } from 'react-router';
 const UpperScreen = ({
   title = "WEBSITE NÀY CÓ QUẢNG CÁO!",
   description = "KHÔNG CÓ QUẢNG CÁO THÌ DUY TRỈ WEBSITE MÃI SAO?!",
@@ -29,6 +30,13 @@ const UpperScreen = ({
   ]
 }) => {
 
+  const paramsSearch = useLocation()
+  console.log(paramsSearch)
+
+  const videoId = paramsSearch.pathname.split('/')[2]
+  const linkF = paramsSearch.pathname.split('/')[3]
+  
+
   const [openFilm, setOpenFilm] = React.useState(false)
   const onPlayClick = () => {
     setOpenFilm(true)
@@ -38,7 +46,7 @@ const UpperScreen = ({
       {/* Video Player Area */}
 
       <div className="video-player-area">
-        {openFilm && <iframe width={'100%'} height={'100%'} src="https://www.youtube.com/embed/rzRUlBcmsDo" security='false' frameborder="0" allowfullscreen ></iframe>}
+        {openFilm && <iframe width={'100%'} height={'100%'} src={`https://www.youtube.com/embed/${linkF}`} security='false' frameborder="0" allowfullscreen ></iframe>}
 
         {/* Trang trí góc */}
         <div className="corner-decoration"></div>

@@ -30,6 +30,8 @@ function App() {
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/viewfilm/:id" element={<ViewFilm />} />
           <Route path="/inmovie/:id" element={<InMovie />} />
+          <Route path="/inmovie/:idFilm/:link" element={<InMovie />} />
+
 
       </Routes>
     </div>

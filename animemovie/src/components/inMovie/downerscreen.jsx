@@ -1,38 +1,33 @@
 import React, { useState } from 'react';
 import '../../styles/downerscreen.css';
+import { useNavigate } from 'react-router';
 
-const LowerScreen = ({ 
-  totalEpisodes = 12,
-  currentEpisode = 1,
-  onEpisodeSelect = (episode) => {},
-  episodeLabel = "VIETSUB-ESPISODES"
-}) => {
-  const [selectedEpisode, setSelectedEpisode] = useState(currentEpisode);
-
+const LowerScreen = (props) => {
+  const { episodes, film } = props;
+  const [selectedEpisode, setSelectedEpisode] = useState(1);
+  const navigate = useNavigate();
+  console.log(props.episodes);
   const handleEpisodeClick = (episode) => {
     setSelectedEpisode(episode);
-    onEpisodeSelect(episode);
+    navigate(`/inmovie/${film.id}/${episode.link}`);
   };
-
-  // Generate episode array
-  const episodes = Array.from({ length: totalEpisodes }, (_, i) => i + 1);
 
   return (
     <div className="lowerscreen-container">
       <div className="episode-header">
-        <h2 className="episode-title">{episodeLabel}</h2>
+        <h2 className="episode-title">{props.episodeLabel}</h2>
       </div>
 
       <div className="episodes-grid">
         {episodes.map((episode) => (
           <button
-            key={episode}
+            key={episode.id}
             className={`episode-btn ${
               selectedEpisode === episode ? 'active' : ''
             }`}
             onClick={() => handleEpisodeClick(episode)}
           >
-            {String(episode).padStart(2, '0')}
+            {String(episode.id).padStart(2, '0')}
           </button>
         ))}
       </div>

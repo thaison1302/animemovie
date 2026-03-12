@@ -8,7 +8,7 @@ export const ViewFilm = () => {
   const movie = data.find(item => item.id === parseInt(id)) || data[0];
   return (
     <div>
-      <UpperCard movieName={movie.movieName} image={movie.image} episode={movie.episode} />
+      <UpperCard movieName={movie.movieName} image={movie.image} episode={movie.episode} link={movie.link} id={movie.id} />
       <DownerCard 
         description={movie.description}
         rating={movie.rating}
