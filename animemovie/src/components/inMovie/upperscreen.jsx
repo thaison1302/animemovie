@@ -15,13 +15,13 @@ const UpperScreen = ({
   hasPlayButton = true,
   // onPlayClick = () => {},
   controls = [
-    { id: 1, icon: '>', label: 'Tập tiếp' },
-    { id: 2, icon: 'Q', label: 'Bình luận' },
-    { id: 3, icon: 'o', label: 'Tắt đèn' },
-    { id: 4, icon: 'v', label: 'Theo dõi' },
-    { id: 5, icon: '@', label: 'Phóng to' },
-    { id: 6, icon: '!', label: 'Báo lỗi' },
-    { id: 7, icon: '()', label: 'Chụp ảnh' }
+    { id: 1, icon: '>', label: 'next' },
+    { id: 2, icon: 'Q', label: 'comment' },
+    { id: 3, icon: 'o', label: 'lights off' },
+    { id: 4, icon: 'v', label: 'follow' },
+    { id: 5, icon: '@', label: 'zoom' },
+    { id: 6, icon: '!', label: 'bug report' },
+    { id: 7, icon: '()', label: 'picture' }
   ],
   servers = [
     { name: 'DU', color: '#FF4444' },
@@ -86,7 +86,7 @@ const UpperScreen = ({
 
       {/* Server Selection */}
       <div className="server-section">
-        <p className="server-label">Tải về</p>
+        <p className="server-label">download</p>
         <div className="servers-container">
           {servers.map((server, index) => (
             <button
@@ -102,7 +102,7 @@ const UpperScreen = ({
 
       {/* Chọn Server */}
       <div className="choose-server">
-        <p>Chọn Server:</p>
+        <p>Choose Server:</p>
       </div>
     </div>
   );
