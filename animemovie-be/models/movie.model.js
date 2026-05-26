@@ -5,8 +5,8 @@ const movieSchema = new mongoose.Schema(
     name: { type: String, required: true },
     description: { type: String, required: true },
     totalEpisode: { type: Number, required: true },
-    genres:[String],
-   
+    genres: [String],
+    link: { type: String },
   },
   { timestamps: true },
 );

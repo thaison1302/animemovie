@@ -1,0 +1,58 @@
+.genre-filter {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 30px 0;
+  padding: 0 80px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.genre-btn {
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  background: transparent;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  font-family: inherit;
+}
+
+.genre-btn:hover {
+  border-color: #b3ff00;
+  color: #b3ff00;
+}
+
+.genre-btn.active {
+  background-color: #b3ff00;
+  color: #1a1a1a;
+  border-color: #b3ff00;
+  box-shadow: 0 0 12px rgba(179, 255, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .genre-filter {
+    padding: 0 20px;
+    gap: 8px;
+  }
+
+  .genre-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .genre-filter {
+    padding: 0 12px;
+    justify-content: center;
+  }
+
+  .genre-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+}
